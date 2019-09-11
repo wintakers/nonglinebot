@@ -38,9 +38,8 @@ function handleMessageEvent(event) {
 
     if (eventText === 'ขอที่อยู่') {
         msg = {
-            'type': 'image',
-            'originalContentUrl': 'https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100',
-            'previewImageUrl': 'https://images.performgroup.com/di/library/GOAL/a6/bb/fifa-18-ronaldo_lx3r88bpjpk91re36ukdgomrj.jpg?t=2027563652&w=620&h=430'
+            'type': 'text',
+            ' สถาบันวิจัยและพัฒนาแห่ง มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์ เลขที่ 96 หมู่ 3 ถนนพุทธมณฑลสาย 5 ต.ศาลายา อ.พุทธมณฑล จ.นครปฐม 73170'
         }
     } else if (eventText === 'location') {
         msg = {
