@@ -36,7 +36,7 @@ function handleMessageEvent(event) {
 
    let eventText = event.message.text.toLowerCase();
 
-    if (eventText === 'image') {
+    if (eventText === 'ขอที่อยู่') {
         msg = {
             'type': 'image',
             'originalContentUrl': 'https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100',
