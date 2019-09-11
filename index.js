@@ -31,7 +31,7 @@ function handleEvent(event) {
 function handleMessageEvent(event) {
     var msg = {
         type: 'text',
-        text: 'สวัสดีครัช'
+        text: 'ขออีกครั้ง'
     };
 
     var eventText = event.message.text.toLowerCase();
