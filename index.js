@@ -29,12 +29,12 @@ function handleEvent(event) {
 }
 
 function handleMessageEvent(event) {
-    var msg = {
+   let msg = {
         type: 'text',
         text: 'Hello'
     };
 
-    var eventText = event.message.text.toLowerCase();
+   let eventText = event.message.text.toLowerCase();
 
     if (eventText === 'image') {
         msg = {
