@@ -2,7 +2,6 @@ const express = require('express');
 const line = require('@line/bot-sdk');
 
 require('dotenv').config();
-
 const app = express();
 
 const config = {
@@ -29,10 +28,10 @@ function handleEvent(event) {
 }
 
 function handleMessageEvent(event) {
-    let a=2
+   
    let msg = {
         type: 'text',
-        text: `dfs${a}`
+        text: 'น้องบอทสามารถตอบคำถามเกี่ยวกับ ทุนวิจัย เบิกเงินวิจัยและกองทุนสนับสนุนงานวิจัย'
     };
 
    let eventText = event.message.text.toLowerCase();
