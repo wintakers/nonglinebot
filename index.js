@@ -31,7 +31,7 @@ function handleEvent(event) {
 function handleMessageEvent(event) {
     var msg = {
         type: 'text',
-        text: 'ขออีกครั้ง'
+        text: 'ขสถาบันวิจัยและพัฒนาแห่ง มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์ เลขที่ 96 หมู่ 3 ถนนพุทธมณฑลสาย 5 ต.ศาลายา อ.พุทธมณฑล จ.นครปฐม 73170'
     };
 
     var eventText = event.message.text.toLowerCase();
