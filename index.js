@@ -29,9 +29,10 @@ function handleEvent(event) {
 }
 
 function handleMessageEvent(event) {
+    let a=2
    let msg = {
         type: 'text',
-        text: 'Hello'
+        text: `dfs${a}`
     };
 
    let eventText = event.message.text.toLowerCase();
