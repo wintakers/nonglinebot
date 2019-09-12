@@ -51,7 +51,7 @@ function handleMessageEvent(event) {
     }else if (eventText === 'ทุนวิจัย2564') {
         msg = {
             'type': 'text',
-            text: ' วิทยาศาสตร์ วิจัยและนวัตกรรม\n-	http://www.ird.rmutr.ac.th/blog/2019/09/03/budget_a2564/'
+            text: ' วิทยาศาสตร์ วิจัยและนวัตกรรม\n	http://www.ird.rmutr.ac.th/blog/2019/09/03/budget_a2564/'
 
         }
     }else if (eventText === 'ทุนวิจัย2563') {
