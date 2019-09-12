@@ -63,7 +63,7 @@ function handleMessageEvent(event) {
     }else if (eventText === 'เบิกเงินงวดที่ 1') {
         msg = {
             'type': 'text',
-            text: MSG[0]
+            text: MSG[0]+MSG[1]
 
         }
     }else if (eventText === 'เบิกเงินงวดที่ 2') {
