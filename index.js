@@ -41,7 +41,12 @@ function handleMessageEvent(event) {
             'type': 'text',
             text: ' สถาบันวิจัยและพัฒนาแห่ง มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์ เลขที่ 96 หมู่ 3 ถนนพุทธมณฑลสาย 5 ต.ศาลายา อ.พุทธมณฑล จ.นครปฐม 73170'
         }
-    } else if (eventText === 'location') {
+    }else if (eventText === 'ทุนวิจัย2564') {
+        msg = {
+            'type': 'text',
+            text: ' วิทยาศาสตร์ วิจัยและนวัตกรรม'
+        }
+    }else if (eventText === 'location') {
         msg = {
             "type": "location",
             "title": "my location",
