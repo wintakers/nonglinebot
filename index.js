@@ -32,7 +32,7 @@ function handleMessageEvent(event) {
 
    let msg = {
         type: 'text',
-        text: 'น้องบอทสามารถตอบคำถามเกี่ยวกับ ทุนวิจัย เบิกเงินวิจัยและกองทุนสนับสนุนงานวิจัย'
+        text: 'น้องบอทสามารถตอบคำถามเกี่ยวกับ ทุนวิจัย เบิกเงินวิจัยและกองทุนสนับสนุนงานวิจัย เอกสารดาวน์โหลด'
     };
 
    let eventText = event.message.text.toLowerCase();
@@ -100,6 +100,12 @@ function handleMessageEvent(event) {
         msg = {
             'type': 'text',
             text: 'สวัสดีค่ะท่านสามารถติดต่อ สถาบันวิจัยและพัฒนา มทร.รัตนโกสินทร์ ได้ตามช่องทางการติดต่อด้านล่างนี้\nFacebook : https://www.facebook.com/irdrmutr\nWebsite : https://ird.rmutr.ac.th\nEmail : ird.r@rmutr.ac.th , irdrmutr@hotmail.co.th\nสามารถติดต่อได้ที่ 02-441-6060 ต่อ 2420-2426'
+
+        }
+    }else if (eventText === 'เอกสารดาวน์โหลด') {
+        msg = {
+            'type': 'text',
+            text: 'สวัสดีค่ะท่านสามารถดาวน์โหลดเอกสารต่างๆได้ในลิงค์ด้านล่างนี้\nhttps://ird.rmutr.ac.th/formdownload/ '
 
         }
     }else if (eventText === 'location') {
