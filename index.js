@@ -1,6 +1,7 @@
 const express = require('express');
 const line = require('@line/bot-sdk');
 const MSG= require('./data') ;
+const MSG= require('./data1') ;
 require('dotenv').config();
 const app = express();
 // console.log(MSG.data1);
@@ -70,6 +71,12 @@ function handleMessageEvent(event) {
         msg = {
             'type': 'text',
             text: MSG[0]+MSG[1]+MSG[2]
+
+        }
+    }else if (eventText === 'ขอรายละเอียดเบิกเงินวิจัย') {
+        msg = {
+            'type': 'text',
+            text: MSG[3]+MSG[4]+MSG[5]
 
         }
     }else if (eventText === 'เบิกเงินงวดที่2') {
