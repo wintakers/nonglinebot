@@ -96,6 +96,12 @@ function handleMessageEvent(event) {
             text: 'สวัสดีค่ะท่านสามารถสอบถามเกี่ยวกับ ทุนวิจัย เบิกเงินวิจัยและกองทุนสนับสนุนงานวิจัย'
 
         }
+    }else if (eventText === 'สามารถติดต่อได้ทางไหนบ้าง') {
+        msg = {
+            'type': 'text',
+            text: 'สวัสดีค่ะท่านสามารถติดต่อ สถาบันวิจัยและพัฒนา มทร.รัตนโกสินทร์ ได้ตามช่องทางการติดต่อด้านล่างนี้\nFacebook : https://www.facebook.com/irdrmutr\nWebsite : https://ird.rmutr.ac.th\nEmail : ird.r@rmutr.ac.th , irdrmutr@hotmail.co.th\nสามารถติดต่อได้ที่ 02-441-6060 ต่อ 2420-2426'
+
+        }
     }else if (eventText === 'location') {
         msg = {
             "type": "location",
