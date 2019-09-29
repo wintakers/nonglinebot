@@ -3,7 +3,14 @@ const line = require('@line/bot-sdk');
 const MSG= require('./data') ;
 require('dotenv').config();
 const app = express();
-// console.log(MSG.data1);
+// console.log(MSG.data1)
+
+
+
+const request = require('request')
+
+
+
 
 const config = {
     channelAccessToken:'ThXtHfpRU4AJDAQbAXs2UP3QSLzsqXi/TQ5D3nn85jPlrXJmyELlgXRCq1m3a54n7bzjjm5rF+y2ABIh4hdY/Mlm452KEu3QUPR/cwR7WLpSSVhU1e900yQcMZOoV8mhfdqohkHoDwLk88ZeSn4DNQdB04t89/1O/w1cDnyilFU=',
@@ -43,8 +50,29 @@ function handleMessageEvent(event) {
             text: ' สถาบันวิจัยและพัฒนาแห่ง มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์ เลขที่ 96 หมู่ 3 ถนนพุทธมณฑลสาย 5 ต.ศาลายา อ.พุทธมณฑล จ.นครปฐม 73170'
         }
     }else if (eventText === 'สอบถาม') {
-        console.dir(`this is eventext=${eventText}`);
+        // console.dir();
         
+        request({
+            method: 'POST',
+            uri: 'https://notify-api.line.me/api/notify',
+            header: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            auth: {
+              bearer: 'KkD5Q5KrOjTl9BcwQBxBstj4qZpo8bu0Kk6q9bAPJqv', //token
+            },
+            form: {
+              message: `this is eventext=${eventText}`, //ข้อความที่จะส่ง
+            },
+          }, (err, httpResponse, body) => {
+            if (err) {
+              console.log(err)
+            } else {
+              console.log(body)
+            }
+          })
+          
+
         msg = {
             'type': 'text',
             text: 'สวัสดีค่ะท่านสามารถสอบถามเกี่ยวกับ\n-ทุนวิจัย\n-เบิกเงินวิจัย\n-กองทุนสนับสนุนงานวิจัย\n-เอกสารดาวน์โหลด\n'+
