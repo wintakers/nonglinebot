@@ -2,8 +2,9 @@
 var mysql = require('mysql');
 var con = mysql.createConnection({
     host: "localhost",
-    user:"root",
-    password:""
+    user:"id11051026_nonglinebot2019",
+    password:"nattapol2540",
+    dbname:"id11051026_question_tb"
 });
 
 con.connect(function(err) {
