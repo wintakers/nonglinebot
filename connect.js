@@ -1,11 +1,14 @@
 
-var mysql = require('mysql');
-var con = mysql.createConnection({
-    host: "localhost",
-    user:"id11051026_nonglinebot2019",
-    password:"nattapol2540",
-    dbname:"id11051026_question_tb"
-});
+var mysql      = require('mysql');
+var mysqlConnection;
+function new_mysqlConnection() {
+    mysqlConnection = mysql.createConnection({
+      host     : 'localhost',
+      user     : 'id11051026_nonglinebot2019',
+      database : 'id11051026_question_tb',
+      password : 'nattapol2540'
+    });
+}
 
 con.connect(function(err) {
     if (err) {
