@@ -1,14 +1,11 @@
 
-var mysql      = require('mysql');
-var mysqlConnection;
-function new_mysqlConnection() {
-    mysqlConnection = mysql.createConnection({
-      host     : 'localhost',
-      user     : 'id11051026_nonglinebot2019',
-      database : 'id11051026_question_tb',
-      password : 'nattapol2540'
-    });
-}
+var mysql = require('mysql');
+var con = mysql.createConnection({
+    host: "https://nattapol2540.000webhostapp.com/",
+    user:"id11070982_nattapol2540",
+    password:"nattapol2540",
+    dbname:"id11070982_question"
+});
 
 con.connect(function(err) {
     if (err) {
