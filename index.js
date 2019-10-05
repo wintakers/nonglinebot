@@ -59,7 +59,7 @@ function handleMessageEvent(event) {
         // console.dir();
         db.all("SELECT * FROM t1", [], (err,row) =>{
             // console.dir(row);
-            data.id=row
+            data.id=row.toString()
             row.map((item)=>{console.dir(item)}) 
           });
         request({
