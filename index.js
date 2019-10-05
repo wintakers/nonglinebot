@@ -45,7 +45,7 @@ function handleMessageEvent(event) {
 
    let msg = {
         type: 'text',
-        text: 'น้องบอทสามารถตอบคำถามเกี่ยวกับ\n-ทุนวิจัย\n-เบิกเงินวิจัย\n-กองทุนสนับสนุนงานวิจัย\n-เอกสารดาวน์โหลด'
+        text: 'dffd'
     };
 
    let eventText = event.message.text.toLowerCase();
@@ -403,6 +403,12 @@ function handleMessageEvent(event) {
                 ]
             }
         }
+    }
+    else{
+        msg = {
+            type: 'text',
+            text: 'น้องบอทสามารถตอบคำถามเกี่ยวกับ\n-ทุนวิจัย\n-เบิกเงินวิจัย\n-กองทุนสนับสนุนงานวิจัย\n-เอกสารดาวน์โหลด'
+        };
     }
 
     return client.replyMessage(event.replyToken, msg);
