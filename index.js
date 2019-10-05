@@ -1,6 +1,7 @@
 const express = require('express');
 const line = require('@line/bot-sdk');
 const address = require('./address')
+const query = require('./query')
 const MSG = require('./data');
 
 require('dotenv').config();
@@ -68,14 +69,9 @@ function handleMessageEvent(event) {
         }
     } else if (eventText === 'สอบถาม') {
         // console.dir();
- 
-
-
         msg = {
             'type': 'text',
-            text: 'สวัสดีค่ะท่านสามารถสอบถามเกี่ยวกับ\n-ทุนวิจัย\n-เบิกเงินวิจัย\n-กองทุนสนับสนุนงานวิจัย\n-เอกสารดาวน์โหลด\n' +
-                'ท่านสามารถดูรายละเอียดโดยการพิมพ์ขอรายละเอียดแต่ละหัวข้อกับน้องบอทได้ เช่น ทุนวิจัย เป็นต้น'
-
+            text: query.MSG
         }
     } else if (eventText === 'สอบถาม') {
         msg = {
