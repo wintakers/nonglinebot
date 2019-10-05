@@ -65,30 +65,7 @@ function handleMessageEvent(event) {
         }
     } else if (eventText === 'สอบถาม') {
         // console.dir();
-        db.all("SELECT * FROM t1", [], (err, row) => {
-            // console.dir(row);
-            data.id = JSON.stringify(row)
-            row.map((item) => { console.dir(item) })
-        });
-        request({
-            method: 'POST',
-            uri: 'https://notify-api.line.me/api/notify',
-            header: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            auth: {
-                bearer: 'KkD5Q5KrOjTl9BcwQBxBstj4qZpo8bu0Kk6q9bAPJqv', //token
-            },
-            form: {
-                message: `this is eventext=${data.id}`, //ข้อความที่จะส่ง
-            },
-        }, (err, httpResponse, body) => {
-            if (err) {
-                console.log(err)
-            } else {
-                console.log(body)
-            }
-        })
+ 
 
 
         msg = {
@@ -153,6 +130,40 @@ function handleMessageEvent(event) {
                 'ท่านสามารถดูรายละเอียดโดยการพิมพ์ขอรายละเอียดแต่ละหัวข้อกับน้องบอทได้ เช่น ทุนวิจัย เป็นต้น'
 
         }
+    }
+    else if (eventText === 'report') {
+
+
+        db.all("SELECT * FROM t1", [], (err, row) => {
+            // console.dir(row);
+            data.id = JSON.stringify(row)
+            row.map((item) => { console.dir(item) })
+        });
+        request({
+            method: 'POST',
+            uri: 'https://notify-api.line.me/api/notify',
+            header: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            auth: {
+                bearer: 'KkD5Q5KrOjTl9BcwQBxBstj4qZpo8bu0Kk6q9bAPJqv', //token
+            },
+            form: {
+                message: `this is eventext=${data.id}`, //ข้อความที่จะส่ง
+            },
+        }, (err, httpResponse, body) => {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log(body)
+            }
+        })
+
+        msg={
+            'type':'text',
+            'text':data.id
+        }
+        
     } else if (eventText === 'ทุนวิจัย') {
         msg = {
             'type': 'text',
