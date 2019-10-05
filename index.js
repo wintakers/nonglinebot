@@ -13,7 +13,7 @@ const data = {
     id: null
 }
 app.get('/data', (req, res) => {
-    db.all("SELECT * FROM t1", [], (err, row) => {
+    db.all("SELECT * FROM question", [], (err, row) => {
         // console.dir(row);
         data.id = JSON.stringify(row)
         row.map((item) => { console.dir(item) })
@@ -134,7 +134,7 @@ function handleMessageEvent(event) {
     else if (eventText === 'report') {
 
 
-        db.all("SELECT * FROM t1", [], (err, row) => {
+        db.all("SELECT * FROM question", [], (err, row) => {
             // console.dir(row);
             data.id = JSON.stringify(row)
             row.map((item) => { console.dir(item) })
@@ -430,7 +430,7 @@ function handleMessageEvent(event) {
             type: 'text',
             text: 'น้องบอทสามารถตอบคำถามเกี่ยวกับ\n-ทุนวิจัย\n-เบิกเงินวิจัย\n-กองทุนสนับสนุนงานวิจัย\n-เอกสารดาวน์โหลด'
         };
-        db.all("INSERT INTO  t1(menu) VALUES(?)", [eventText], (err) => {
+        db.all("INSERT INTO  question(question) VALUES(?)", [eventText], (err) => {
             if(err) console.dir(err.message);
 
         });
