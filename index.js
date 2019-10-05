@@ -9,7 +9,9 @@ const db = new sqlite3.Database("./demo1.sqlite", err =>{
 })
 // console.log(MSG.data1)
 
-
+const data={
+    id:null
+}
 
 const request = require('request')
 
@@ -55,10 +57,9 @@ function handleMessageEvent(event) {
         }
     }else if (eventText === 'สอบถาม') {
         // console.dir();
-        let data;
         db.all("SELECT * FROM t1", [], (err,row) =>{
             // console.dir(row);
-            data=row
+            data.id=row
             row.map((item)=>{console.dir(item)}) 
           });
         request({
@@ -71,7 +72,7 @@ function handleMessageEvent(event) {
               bearer: 'KkD5Q5KrOjTl9BcwQBxBstj4qZpo8bu0Kk6q9bAPJqv', //token
             },
             form: {
-              message: `this is eventext=${data}`, //ข้อความที่จะส่ง
+              message: `this is eventext=${data.id}`, //ข้อความที่จะส่ง
             },
           }, (err, httpResponse, body) => {
             if (err) {
