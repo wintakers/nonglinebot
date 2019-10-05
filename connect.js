@@ -1,17 +1,12 @@
-
-var mysql = require('mysql');
-var con = mysql.createConnection({
-    host: "https://nattapol2540.000webhostapp.com/",
-    user:"id11070982_nattapol2540",
-    password:"nattapol2540",
-    dbname:"id11070982_question"
+var sqlite3 = require ("sqlite3").verbose();
+var db = new sqlite3.Database("./demo1.sqlite", err =>{
+  console.log(err);
+})
+db.all("SELECT * FROM t1", [], (err,row) =>{
+  // console.dir(row);
+  row.map((item)=>{console.dir(item)}) 
 });
+// db.all("INSERT INTO  t1(id,menu) VALUES(?,?)", [1,"CAkE"], (err) =>{
+//   console.dir(err.message);
 
-con.connect(function(err) {
-    if (err) {
-      console.error('error connecting: ' + err.stack);
-      return;
-    }
-   
-    console.log('connected as id ' + con.threadId);
-  });
+// });

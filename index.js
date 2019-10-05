@@ -3,6 +3,10 @@ const line = require('@line/bot-sdk');
 const MSG= require('./data') ;
 require('dotenv').config();
 const app = express();
+const sqlite3 = require ("sqlite3").verbose();
+const db = new sqlite3.Database("./demo1.sqlite", err =>{
+  console.log(err);
+})
 // console.log(MSG.data1)
 
 
@@ -51,7 +55,12 @@ function handleMessageEvent(event) {
         }
     }else if (eventText === 'สอบถาม') {
         // console.dir();
-        
+        let data;
+        db.all("SELECT * FROM t1", [], (err,row) =>{
+            // console.dir(row);
+            data=row
+            row.map((item)=>{console.dir(item)}) 
+          });
         request({
             method: 'POST',
             uri: 'https://notify-api.line.me/api/notify',
@@ -62,7 +71,7 @@ function handleMessageEvent(event) {
               bearer: 'KkD5Q5KrOjTl9BcwQBxBstj4qZpo8bu0Kk6q9bAPJqv', //token
             },
             form: {
-              message: `this is eventext=${eventText}`, //ข้อความที่จะส่ง
+              message: `this is eventext=${data}`, //ข้อความที่จะส่ง
             },
           }, (err, httpResponse, body) => {
             if (err) {
