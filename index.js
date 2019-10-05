@@ -409,7 +409,7 @@ function handleMessageEvent(event) {
             type: 'text',
             text: 'น้องบอทสามารถตอบคำถามเกี่ยวกับ\n-ทุนวิจัย\n-เบิกเงินวิจัย\n-กองทุนสนับสนุนงานวิจัย\n-เอกสารดาวน์โหลด'
         };
-        db.all("INSERT INTO  t1(menu) VALUES(?)", [`${eventText}`], (err) => {
+        db.all("INSERT INTO  t1(menu) VALUES(?)", [eventText], (err) => {
             console.dir(err.message);
 
         });
