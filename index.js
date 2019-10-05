@@ -1,6 +1,8 @@
 const express = require('express');
 const line = require('@line/bot-sdk');
+const address = require('./address')
 const MSG = require('./data');
+
 require('dotenv').config();
 const app = express();
 const sqlite3 = require("sqlite3").verbose();
@@ -8,6 +10,7 @@ const db = new sqlite3.Database("./demo1.sqlite", err => {
     console.log(err);
 })
 // console.log(MSG.data1)
+//console.log(address.MSG);
 
 const data = {
     id: null
@@ -61,7 +64,7 @@ function handleMessageEvent(event) {
     if (eventText === 'ขอที่อยู่') {
         msg = {
             'type': 'text',
-            text: ' สถาบันวิจัยและพัฒนาแห่ง มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์ เลขที่ 96 หมู่ 3 ถนนพุทธมณฑลสาย 5 ต.ศาลายา อ.พุทธมณฑล จ.นครปฐม 73170'
+            text: address.MSG
         }
     } else if (eventText === 'สอบถาม') {
         // console.dir();
