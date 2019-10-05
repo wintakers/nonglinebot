@@ -134,7 +134,7 @@ function handleMessageEvent(event) {
     else if (eventText === 'report') {
 
 
-        db.all("SELECT * FROM question", [], (err, row) => {
+        db.all("SELECT * FROM t1", [], (err, row) => {
             // console.dir(row);
             data.id = JSON.stringify(row)
             row.map((item) => { console.dir(item) })
