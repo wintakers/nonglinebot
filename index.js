@@ -49,7 +49,7 @@ function handleEvent(event) {
     }
 }
 
-async function handleMessageEvent(event) {
+function handleMessageEvent(event) {
 
     let msg = {
         type: 'text',
@@ -430,10 +430,13 @@ async function handleMessageEvent(event) {
             type: 'text',
             text: 'น้องบอทสามารถตอบคำถามเกี่ยวกับ\n-ทุนวิจัย\n-เบิกเงินวิจัย\n-กองทุนสนับสนุนงานวิจัย\n-เอกสารดาวน์โหลด'
         };
-       await db.all("INSERT INTO  question(question) VALUES(?)", [eventText], (err) => {
-            if(err) console.dir(err.message);
-
-        });
+        if (eventText!== "hello, world") {
+            db.all("INSERT INTO  question(question) VALUES(?)", [eventText], (err) => {
+                if(err) console.dir(err.message);
+    
+            });
+        }
+      
     }
 
     return client.replyMessage(event.replyToken, msg);
