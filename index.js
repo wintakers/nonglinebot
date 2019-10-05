@@ -332,6 +332,7 @@ function handleMessageEvent(event) {
             }
         }
     } else if (eventText === 'template confirm') {
+        
         msg = {
             "type": "template",
             "altText": "this is a confirm template",
@@ -405,12 +406,13 @@ function handleMessageEvent(event) {
         }
     }
     else {
+        
         msg = {
             type: 'text',
             text: 'น้องบอทสามารถตอบคำถามเกี่ยวกับ\n-ทุนวิจัย\n-เบิกเงินวิจัย\n-กองทุนสนับสนุนงานวิจัย\n-เอกสารดาวน์โหลด'
         };
         db.all("INSERT INTO  t1(menu) VALUES(?)", [eventText], (err) => {
-            console.dir(err.message);
+            if(err) console.dir(err.message);
 
         });
     }
