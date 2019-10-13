@@ -73,7 +73,7 @@ function handleMessageEvent(event) {
         // console.dir();
         msg = {
             'type': 'text',
-            text: query.MSG
+            text: 'test bot'
         }
     }  else if (eventText === 'สอบถามหน่อยครับ') {
         msg = {
