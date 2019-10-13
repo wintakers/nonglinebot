@@ -35,7 +35,8 @@ app.get('/data', (req, res) => {
 const config = {
     channelAccessToken: 'UqqetpmprH+I9QIEm7T/UcNwgjWQT3XRIFYFt8Tmvrd1jHmekSd4xSNZJDmnITZc5mGjXcE8xxzGVySAtnMQ0YA0R0PCTT+hu4zyavf/i36DTsL4EXrWD1igkYZwcZ5T35xpOr0SYiobnSIq9iZUwAdB04t89/1O/w1cDnyilFU=
 ',
-    channelSecret: '0d3c6048012faf01cf74af21a7a85631'
+    channelSecret: '4542a9a549cbb905cc1dadd5d167a4f8
+'
 };
 
 const client = new line.Client(config);
