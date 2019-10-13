@@ -131,7 +131,7 @@ function handleMessageEvent(event) {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
             auth: {
-                bearer: 'd2NRQhKoUaBE5eU4LMDOC5uUjOYzxc87xS1WcKraSEP', //token
+                bearer: 'WWfQVqxh4p9lb6q97aDEk3p5HgxGIeBFjQUyiuto7SK', //token
             },
             form: {
                 message: `this is eventext=${data.id}`, //ข้อความที่จะส่ง
