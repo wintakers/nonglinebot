@@ -98,7 +98,7 @@ function handleMessageEvent(event) {
         
         msg = {
             type: 'text',
-            text: 'ขอบคุณสำหรับการแจ้งปัญหาเบื้องต้นนะครับ "น้องวิท" จะนำไปปรับปรุงและแก้ไขให้ดีมากยิ่งขึ้นครับ' 
+            text: 'น้องวิท ยินดีรับใช้เสมอนะครับขอบคุณครับ' 
         };
         if (eventText!== "hello, world" && eventText!== null) {
             db.all("INSERT INTO  question(question) VALUES(?)", [eventText], (err) => {
