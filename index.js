@@ -199,7 +199,13 @@ async function handleMessageEvent(event) {
                 console.log(JSON.stringify(row));
             }
             data.id = JSON.stringify(result)
+            let  msg = {
+                'type': 'text',
+                'text': data.id
+            }
+            
             console.log(`this is = ${result}`);
+            return client.replyMessage(event.replyToken, msg);
         });
         request({
             method: 'POST',
@@ -221,10 +227,7 @@ async function handleMessageEvent(event) {
             }
         })
 
-        msg = {
-            'type': 'text',
-            'text': data.id
-        }
+    
 
     } else if (eventText === 'ทุนวิจัย') {
         msg = {
