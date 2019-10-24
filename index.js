@@ -1,12 +1,17 @@
 const express = require('express');
 const line = require('@line/bot-sdk');
+const bodyParser = require('body-parser')
 const request = require('request')
 require('dotenv').config();
+let cors = require('cors')
 const app = express();
 const { clientDB } = require("./connect");
 // console.log(MSG.data1)
 //console.log(address.MSG);
-
+app.use(cors())
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 const data = {
     id: null,
     del: null
@@ -28,6 +33,40 @@ app.get("/data", (req, res) => {
     });
 });
 
+
+app.post("/delete", (req, res) => {
+
+    clientDB.query(`DELETE FROM question WHERE id in (${req.body.data})`, (err, resDB) => {
+        if (err) throw err;
+        else {
+            if (resDB.rowCount) {
+                res.send(`Delete success`);
+            }
+            else {
+                res.send(JSON.stringify(resDB))
+            }
+        }
+
+
+    });
+
+});
+app.delete('/del', (req, res) => {
+    console.log(req.query.id);
+    clientDB.query(`DELETE FROM question WHERE id=(${req.query.id})`, (err, resDB) => {
+        if (err) throw err;
+        else {
+            if (resDB.rowCount) {
+                res.send(`Delete success`);
+            }
+            else {
+                res.send(JSON.stringify(resDB))
+            }
+        }
+
+
+    });
+})
 
 
 
@@ -199,11 +238,11 @@ async function handleMessageEvent(event) {
                 console.log(JSON.stringify(row));
             }
             data.id = JSON.stringify(result)
-            let  msg = {
+            let msg = {
                 'type': 'text',
                 'text': data.id
             }
-            
+
             console.log(`this is = ${result}`);
             return client.replyMessage(event.replyToken, msg);
         });
@@ -227,7 +266,7 @@ async function handleMessageEvent(event) {
             }
         })
 
-    
+
 
     } else if (eventText === 'ทุนวิจัย') {
         msg = {
@@ -312,7 +351,7 @@ async function handleMessageEvent(event) {
 
         msg = {
             type: 'text',
-            text: 'น้องวิทบอทประจำสักนักวิทย ยินดีรับใช้เสมอนะครับขอบคุณครับ'
+            text: 'ขอบคุณที่ใช้บริการตึกบริหารธุรกิจ นะครับ'
         };
         if (eventText !== "hello, world" && eventText !== null) {
             //   clientDB.connect();
@@ -324,8 +363,8 @@ async function handleMessageEvent(event) {
                 //  clientDB.end();
             });
         }
-        
-    return client.replyMessage(event.replyToken, msg);
+
+        return client.replyMessage(event.replyToken, msg);
 
     }
 
