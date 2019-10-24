@@ -312,7 +312,7 @@ async function handleMessageEvent(event) {
 
         msg = {
             type: 'text',
-            text: 'ขอบคุณที่ใช้บริการตึกบริหารธุรกิจ นะครับ'
+            text: 'น้องวิทบอทประจำสักนักวิทย ยินดีรับใช้เสมอนะครับขอบคุณครับ'
         };
         if (eventText !== "hello, world" && eventText !== null) {
             //   clientDB.connect();
